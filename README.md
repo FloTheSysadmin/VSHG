@@ -16,7 +16,7 @@ Why is VSHG so secure ?
 -----------------------
 Weak Password ? No problem !
 VSHG uses a true random salt for each encrypted file , So your 
-Passphrase will alway have a minimum of 12 byte in strenth .
+Passphrase will alway have a minimum of 12 byte in strength .
 You could even use the same password twice for different files .
 The thing that makes VSHG so secure are the iterations .
 500 iterations means the output of the string is hashed 500x 
