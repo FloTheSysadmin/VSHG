@@ -6,7 +6,7 @@ It uses the sha384 hash function for the password and
 AES256 for the final encryption . 
 And also a standard Iteration of 500X .
 It uses True random 12 byte salts .
-So even if your pasphrase is very weak , it will reinforce it so that 
+So even if your passphrase is very weak , it will reinforce it so that 
 you dont have to worry about that anymore .
 VSHG uses the last hash of the Iteration as session key for gpg .
 Also it provides an Autodetection function for each file so that you
