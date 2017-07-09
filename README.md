@@ -2,7 +2,7 @@ About VSHG
 -------------
 
 VSHG is a standalone Addon for GPG ( Gnu privacy guard ) .
-It uses the sha384 and Argon2 hash function for the password and 
+It uses the sha384 and the Argon2 hash function for the password and 
 AES256 for the final encryption . 
 And also a standard Iteration of 500X .
 It uses True random 12 byte salts .
