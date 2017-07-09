@@ -2,7 +2,7 @@ About VSHG
 -------------
 
 VSHG is a standalone Addon for GPG ( Gnu privacy guard ) .
-It uses the sha384 hash function for the password and 
+It uses the sha384 and Argon2 hash function for the password and 
 AES256 for the final encryption . 
 And also a standard Iteration of 500X .
 It uses True random 12 byte salts .
@@ -35,19 +35,27 @@ So to effectively get the password it is (5.2*10^31) * Iterations
 if you made 5.2*10^31 operations ). 
 That would be increadybly time consuming .    
 It would take ~ 9,6*10^9 Years for the strongest supercomputer at the time .
-And on the encryption side : cracking an AES256 key takes 2^254,4 operations . 
+And on the encryption side : cracking an AES256 key takes 2^254,4 operations .
+gpg uses the maximal iteration of 65011712 . 
+Argon2 uses 150 rehash iterations and 20 iterations per hash with argon2i .
+Finally is uses an argon2d value with 1200 internal iterations 
 
-Why should I use VSGH ?
+Why should I use VSGH ? 
 -----------------------
 * It is more easy to use than GPG core . 
+* Can encrypt folders by turning them into Zip files .
 * Someone that doesn´t have VSHG does not really have a chance of cracking the password .
 * True random 12 byte salt 
 * choosable Iteration count .
 * choosable Salt . 
-* Secret Iteration option .
+* choosable Keyfile .
+* True random Keyfile . 
+* Very good resistance to side channel attacks ( eg . timeing attacks ).
+* Very resistent towards GPU based attacks 
 * Can guarantee security even with relatively weak passwords ( > 5 charakters )
   ( if you have enough Iterations ) 
 * Autodetection of Salt + Iteration count for each file . 
 * Military standard AES-256 encryption instaed of the gpg standard CAST5 encryption .
-* Erases Original file securely 
+* Uses the gpg s2k mode 3 + sha512 with the maximum count of 65011712 .
+* Erases Original file securely .
 
