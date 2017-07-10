@@ -40,7 +40,7 @@ gpg uses the maximal iteration of 65011712 .
 Argon2 uses 150 rehash iterations and 20 iterations per hash with argon2i .
 Finally is uses an argon2d value with 1200 internal iterations 
 
-Why should I use VSGH ? 
+Why should I use VSHG ? 
 -----------------------
 * It is more easy to use than GPG core . 
 * Can encrypt folders by turning them into Zip files .
