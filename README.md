@@ -1,7 +1,7 @@
 About VSHG
 -------------
 
-VSHG is a standalone Addon for GPG ( Gnu privacy guard ) .
+VSHG ( Very secure hash generator ) is a standalone Addon for GPG ( Gnu privacy guard ) .
 It uses the sha384 and the Argon2 hash function for the password and 
 AES-256-CFB for the final encryption . 
 And also a standard Iteration of 500X .
@@ -16,7 +16,7 @@ Why is VSHG so secure ?
 -----------------------
 Weak Password ? No problem !
 VSHG uses a true random salt for each encrypted file , So your 
-Passphrase will alway have a minimum of 12 byte in strength .
+Passphrase will always have a minimum of 12 byte in strength .
 You could even use the same password twice for different files .
 The thing that makes VSHG so secure are the iterations .
 500 iterations means the output of the string is hashed 500x 
