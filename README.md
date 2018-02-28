@@ -4,7 +4,7 @@ About VSHG
 VSHG ( Very secure hash generator ) is a standalone Addon for GnuPG ( Gnu privacy guard ) .
 It is written as a shell script and is designed arount the Unix/Linux filesystem and commands . 
 VSHG uses the sha384 and the Argon2 hash function for the password and 
-AES-256-CFB + CAST5-128-CFB in cascade for the final encryption . 
+*AES-256-CFB* + *CAST5-128-CFB* in cascade for the final encryption . 
 
 And also a standard sha384 iteration count of 800X + 15 & 500 iterations for Argon2i + d
 
