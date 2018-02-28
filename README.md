@@ -66,3 +66,10 @@ Why should I use VSHG ?
 * Uses the gpg s2k mode 3 + sha512 with the maximum count of 65011712 .
 * Erases Original file securely .
 
+Known bugs
+------------
+
+* Removal of original file will fail if there is a space in the path/name . 
+* Encryption and zipping of folder will fail if the folder has a space in it's path/name . 
+* Some temporary files like randomness are sometimes not removed properly after repeated useage .  
+* problems with cleaning bash history 
