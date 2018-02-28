@@ -3,10 +3,10 @@ About VSHG
 
 VSHG ( Very secure hash generator ) is a standalone Addon for GnuPG ( Gnu privacy guard ) .
 It is written as a shell script and is designed arount the Unix/Linux filesystem and commands . 
-VSHG uses the sha384 and the Argon2 hash function for the password and 
+VSHG uses the **sha384** and the **Argon2** hash function for the password and 
 **AES-256-CFB** + **CAST5-128-CFB** in cascade for the final encryption . 
 
-And also a standard sha384 iteration count of **800** iterations + **15** & **500** iterations for Argon2i + d
+And also a standard **sha384** iteration count of **800** iterations + **15** & **500** iterations for **Argon2i** + **d**
 
 It uses True random **12 byte salts** .
 So even if your passphrase is very weak , it will reinforce it so that 
@@ -25,20 +25,20 @@ Weak Password ? No problem !
 ( Useing a strong Passphrase is still recommanded ) 
 
 VSHG uses a true random salt for each encrypted file , So your 
-Passphrase will always have a minimum of 12 byte in strength .
+Passphrase will always have a minimum of **12** bytes in strength .
 You could even use the same password twice for different files .
 The thing that makes VSHG so secure are the iterations .
-800 iterations means the output of the string is hashed 800x 
+800 iterations means the output of the string is hashed **800x** 
 with its output . 
 The more iterations the more security there will be .
 Even if you have the correct passphrase , but not the correct
 amount of iterations it will not be able to decrypt .
 
 VSHG uses some of the most adwanced forms of memory hard Key derivation functions which are 
-Argon2i and Argon2d . The already iterated key will be passed throu Argon2 a total of 515 times 
+**Argon2i** and **Argon2d** . The already iterated key will be passed throug Argon2 a total of **515** times 
 and therefore ensure the resistance against the biggest threats of Key derivation functions 
 Namely : Graphical Processing Units , Field programmanble gate arrys and 
-Application specific integrated circuits ( GPU , FPEGA , ASIC ) .
+Application specific integrated circuits ( **GPU** , **FPEGA** , **ASIC** ) .
 
 The actual encryption is performed with the highest level of security possible in Gnupg . 
 
