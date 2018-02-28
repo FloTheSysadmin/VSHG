@@ -3,42 +3,45 @@ About VSHG
 
 VSHG ( Very secure hash generator ) is a standalone Addon for GPG ( Gnu privacy guard ) .
 It uses the sha384 and the Argon2 hash function for the password and 
-AES-256-CFB for the final encryption . 
-And also a standard Iteration of 500X .
+AES-256-CFB + CAST5-128-CFB in cascade for the final encryption . 
+And also a standard sha384 Iteration count of 800X .
 It uses True random 12 byte salts .
 So even if your passphrase is very weak , it will reinforce it so that 
 you dont have to worry about that anymore .
 VSHG uses the last hash of the Iteration as session key for gpg .
 Also it provides an Autodetection function for each file so that you
 don´t have to remember either the salt or the iteration count . 
+Optionally you can use a keyfile as authentification method 
 
 Why is VSHG so secure ?
 -----------------------
 Weak Password ? No problem !
+
+( Useing a strong Passphrase is still recommanded ) 
+
 VSHG uses a true random salt for each encrypted file , So your 
 Passphrase will always have a minimum of 12 byte in strength .
 You could even use the same password twice for different files .
 The thing that makes VSHG so secure are the iterations .
-500 iterations means the output of the string is hashed 500x 
+800 iterations means the output of the string is hashed 800x 
 with its output . 
 The more iterations the more security there will be .
 Even if you have the correct passphrase , but not the correct
 amount of iterations it will not be able to decrypt .
 
-The strength 
-------------- 
-A sha384 hash has 96 charakters with 16 possibilities for each charakter 
-That makes 5.2*10^31 possibilities for each hash . 
-But even if you calculated all possible sha384 hashes you still have the iterations 
-So to effectively get the password it is (5.2*10^31) * Iterations 
-( At least for computation power since you would already have all possible hashes
-if you made 5.2*10^31 operations ). 
-That would be increadybly time consuming .    
-It would take ~ 9,6*10^9 Years for the strongest supercomputer at the time .
-And on the encryption side : cracking an AES256 key takes 2^254,4 operations .
-gpg uses the maximal iteration of 65011712 . 
-Argon2 uses 150 rehash iterations and 20 iterations per hash with argon2i .
-Finally is uses an argon2d value with 1200 internal iterations 
+VSHG uses some of the most adwanced forms of memory hard Key derivation functions which are 
+Argon2i and Argon2d . The already iterated key will be passed throu Argon2 a total of 515 times 
+and therefore ensure the resistance against the biggest threats of Key derivation functions 
+Namely : Graphical Processing Units , Field programmanble gate arrys and 
+Application specific integrated circuits ( GPU , FPEGA , ASIC ) .
+
+The actual encryption is performed with the highest level of security possible in Gnupg . 
+
+-The string to key ( s2k ) algo ( which is the KDF of Gnupg ) was reinforced from sha1 to sha512 . 
+-The s2k mode was set to 3 which means that a 8 bit salt is applied and the iterated .
+-The s2k count was set to 65011712 which is the highest possible number of iterations . 
+-The s2k algo was set to AES256 and CAST5 in cascade . 
+The AES 256 encrypted file is securely deleted so that only the AES256(Cast5()) encrypted file is put out . 
 
 Why should I use VSHG ? 
 -----------------------
@@ -55,7 +58,7 @@ Why should I use VSHG ?
 * Can guarantee security even with relatively weak passwords ( > 5 charakters )
   ( if you have enough Iterations ) 
 * Autodetection of Salt + Iteration count for each file . 
-* Military standard AES-256 encryption instaed of the gpg standard CAST5 encryption .
+* Military standard AES-256 encryption + the gpg standard CAST5 encryption .
 * Uses the gpg s2k mode 3 + sha512 with the maximum count of 65011712 .
 * Erases Original file securely .
 
