@@ -175,7 +175,7 @@ fi
 
 # installing Alias 
 
-if ( cat /root/.bashrc | grep "VSHG" );
+if ( cat /root/.bashrc | grep -q "VSHG" );
 then 
 echo ""
 else 
