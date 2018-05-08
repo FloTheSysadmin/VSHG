@@ -18,6 +18,9 @@ don't have to remember either the salt or the iteration count.
 
 Optionally you can use a key-file as authentication method.
 
+
+
+
 Why is VSHG so secure ?
 -----------------------
 Weak Password ? No problem !
