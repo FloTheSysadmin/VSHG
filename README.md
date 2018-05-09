@@ -81,3 +81,8 @@ Known bugs
 * Encryption and zipping of folder will fail if the folder has a **space in it's path/name**. 
 * Some temporary files like randomness are sometimes not removed properly after repeated usage.  
 * problems with cleaning bash history 
+
+License
+--------
+Code distributed under MIT licence.
+
