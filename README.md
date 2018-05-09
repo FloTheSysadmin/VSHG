@@ -83,7 +83,7 @@ Why should I use VSHG ?
 
 Download & Installation
 ------------------------
-Download as tarball
+* Download as tarball
 
 `sudo wget https://github.com/RichardRMatthews/VSHG/archive/1.4.tar.gz`
 
@@ -92,6 +92,7 @@ Or clone the repository
 `git clone https://github.com/RichardRMatthews/VSHG.git`
 
 ------
+* Run 
 
 `sudo tar -xf VSHG-1.4.tar.gz`
 
