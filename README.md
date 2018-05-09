@@ -78,6 +78,25 @@ Why should I use VSHG ?
 * Uses the gpg s2k mode 3 + sha512 with the maximum count of 65011712.
 * Erases Original file securely.
 
+Download & Installation
+------------------------
+Download as tarball
+
+`sudo wget https://github.com/RichardRMatthews/VSHG/archive/1.4.tar.gz`
+
+Or clone the repository
+
+`git clone https://github.com/RichardRMatthews/VSHG.git`
+
+------
+
+`sudo tar -xf VSHG-1.4.tar.gz`
+
+`sudo chmod +x VSHG_1.4.sh`
+
+`sudo ./VSHG_1.4.sh`
+
+
 Known bugs
 ------------
 
