@@ -1,6 +1,9 @@
+# VSHG - Hardware resistance & elevated security for GnuPG. 
+
+![screenshot](https://i.imgur.com/k5Jjku8.png)
+
 About VSHG
 -------------
-![screenshot](https://i.imgur.com/k5Jjku8.png)
 
 VSHG ( Very secure hash generator ) is a standalone Addon for GnuPG ( Gnu privacy guard ) .
 It is written as a shell script and is designed arount the Unix/Linux filesystem and commands. 
