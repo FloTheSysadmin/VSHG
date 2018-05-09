@@ -1,5 +1,5 @@
 # VSHG - Hardware resistance & elevated security for GnuPG. 
-VSHG aims to provide a memory / hardware resistant reinforcement to GnuPG's s2k Key derivation function + a simplified interface for **symmetric** encryption . 
+VSHG aims to provide a memory / hardware resistant reinforcement to GnuPG's standared s2k key-derivation-function + a simplified interface for **symmetric** encryption . 
 
 
 
