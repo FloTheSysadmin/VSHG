@@ -52,7 +52,7 @@ Application specific integrated circuits ( **GPU** , **FPEGA** , **ASIC** ) .
 
 The actual encryption is performed with the highest level of security possible in Gnupg. 
 
--The string to key ( **s2k** ) **algo** ( which is the KDF of Gnupg ) was reinforced from sha1 to **sha512**. 
+-The string to key ( **s2k** ) **hash algo** ( which is the KDF of Gnupg ) was reinforced from sha1 to **sha512**. 
 
 -The **s2k mode** was set to **3** which means that an 8-bit salt is applied and the iterated.
 
