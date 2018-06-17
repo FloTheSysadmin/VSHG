@@ -1,9 +1,8 @@
 <p align="center">
-  <a href="https://img.shields.io/github/issues/RichardRMatthews/VSHG.svg" alt="GitHub release"></a>
-  <a href="https://img.shields.io/github/forks/RichardRMatthews/VSHG.svg" alt="Total downloads"></a>
-  <a href="https://img.shields.io/github/stars/RichardRMatthews/VSHG.svg"><img src="" alt="AppVeyor"></a>
-  <a href="https://img.shields.io/github/license/RichardRMatthews/VSHG.svg" alt="Go Report"></a>
-  <a href="">< 
+   <a href="https://github.com/RichardRMatthews/VSHG/issues"><img src="https://img.shields.io/github/issues/RichardRMatthews/VSHG.svg" alt="issues"></a>
+   <a href="https://github.com/RichardRMatthews/VSHG/forks"><img src="https://img.shields.io/github/forks/RichardRMatthews/VSHG.svg" alt="forks"></a>
+   <a href="https://github.com/RichardRMatthews/VSHG/stars"><img src="https://img.shields.io/github/stars/RichardRMatthews/VSHG.svg" alt="stars"></a>
+   <a href="https://github.com/RichardRMatthews/VSHG/blob/master/LICENSE"><img src="https://img.shields.io/github/license/RichardRMatthews/VSHG.svg" alt="License"></a>
 </p>
 
 
