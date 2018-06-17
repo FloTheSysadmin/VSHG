@@ -9,7 +9,7 @@
 </p>
 
 
-# VSHG - Hardware resistance & elevated security for GnuPG. 
+# VSHG - Hardware resistance & enhanced security for GnuPG. 
 VSHG aims to provide a memory / hardware resistant reinforcement to GnuPG's standared s2k key-derivation-function + a simplified interface for **symmetric** encryption . 
 
 
