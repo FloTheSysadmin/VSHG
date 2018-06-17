@@ -1,3 +1,14 @@
+<p align="center">
+  <a href="https://img.shields.io/github/issues/RichardRMatthews/VSHG.svg" alt="GitHub release"></a>
+  <a href="https://img.shields.io/github/forks/RichardRMatthews/VSHG.svg" alt="Total downloads"></a>
+  <a href="https://img.shields.io/github/stars/RichardRMatthews/VSHG.svg"><img src="" alt="AppVeyor"></a>
+  <a href="https://img.shields.io/github/license/RichardRMatthews/VSHG.svg" alt="Go Report"></a>
+  <a href="">< 
+</p>
+
+
+
+
 # VSHG - Hardware resistance & elevated security for GnuPG. 
 VSHG aims to provide a memory / hardware resistant reinforcement to GnuPG's standared s2k key-derivation-function + a simplified interface for **symmetric** encryption . 
 
