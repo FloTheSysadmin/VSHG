@@ -1,0 +1,31 @@
+Changelog 1.3.1
+---------------
+
++ Added Argon2 to the project
++ Added web connectivity check 
++ Added credits 
++ Added GPU resistance utility ( Argon2 i / d )
++ Added offline mode 
+
+----
+
+~ reduced Argon2 ( rehashing ) iterations for the sake of time cost 
+~ increased default sha384 rehashing iterations to 800
+~ changed start banner look 
+~ removed spelling mistakes 
+
+Changelog 1.4
+-------------
+
++ Added cipher cascade (AES256(AES128)) 
++ Added srm 
++ Added hash splitter for cipher cascade 
++ Added superiour function for autodetection ( extreamly fast ) 
++ Added autodetection function for renamed files 
+
+----
+
+~ optimized the number of rounds while shreddering  
+~ removed compression algorythm 
+~ removed spelling mistakes 
+
