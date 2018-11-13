@@ -133,6 +133,18 @@ fi
  
 # checking for folder 
 
+if [ -f /usr/bin/VSHG ]
+then
+echo ""
+else 
+sudo gcc /etc/VSHG/executable/VSHG_1.4.sh.x.c -o /usr/bin/VSHG
+echo ""
+echo "##############################################"
+echo "# You can now run the "VSHG" command as root #"
+echo "##############################################"
+echo ""
+fi
+
 if [ -d /etc/VSHG ]
 then 
 echo "Folder in place !"
@@ -143,14 +155,17 @@ echo ""
 sudo mkdir /etc/VSHG
 sudo mkdir /etc/VSHG/keydb
 sudo git clone https://github.com/RichardRMatthews/VSHG.git /etc/VSHG/executable
-sudo mv /etc/VSHG/executable/VSHG_1.4.sh /etc/VSHG/executable/VSHG.sh
-sudo chmod +x /etc/VSHG/executable/VSHG.sh
-if ( cat /root/.bashrc | grep "VSHG" );
-then 
+sudo mv /etc/VSHG/executable/src/VSHG_1.4.sh /etc/VSHG/executable/src/VSHG.sh
+sudo chmod +x /etc/VSHG/executable/src/VSHG.sh
+
+if [ -f /usr/bin/VSHG ]
+then
 echo ""
 else 
-echo -n "alias VSHG='/etc/VSHG/executable/VSHG.sh'" >> /root/.bashrc
+sudo gcc /etc/VSHG/executable/VSHG_1.4.sh.x.c -o /usr/bin/VSHG
 fi
+
+
 echo ""
 echo "##############################################"
 echo "# You can now run the "VSHG" command as root #"
@@ -172,17 +187,6 @@ sudo mkdir /etc/VSHG/keydb
 fi
 
 # end checking for key folder 
-
-# installing Alias 
-
-if ( cat /root/.bashrc | grep -q "VSHG" );
-then 
-echo ""
-else 
-echo -n "alias VSHG='/etc/VSHG/executable/VSHG.sh'" >> /root/.bashrc
-fi
-
-# end installing Alias
 
 echo "Do you want to run VSHG in encrypt or in decrypt mode ? ( E/D )"
 read eord 
@@ -239,7 +243,7 @@ read decryptusekeyfile
 if [[ $decryptusekeyfile == *"Y"* ]]
 then 
 echo ""
-echo "Please drop the key file here "
+echo "Please drop the key-file here "
 read keyfileis 
 keyfileis2=$( echo "$keyfileis" | tr -d "'" )
 keyfilehashdecrypt=$( cat "$keyfileis2" | sha384sum )
@@ -252,7 +256,7 @@ stty -echo
 read -p "Password :" passwrd; echo
 stty echo  
 fi 
-echo "whith what salt ? "
+echo "what was the salt ? "
 read dsalt
 echo "How many iterations ? "
 read dit  
@@ -417,7 +421,7 @@ read usekeyfile
 if [[ $usekeyfile == *"Y"* ]]
 then 
 echo ""
-echo "useing keyfile "
+echo "using keyfile "
 echo ""
 
  # Use custom keyfile 
@@ -430,7 +434,7 @@ read customekeyfileyesorno
 if [[ $customekeyfileyesorno == *"Y"* ]]
 then 
 echo ""
-echo "Useing custom keyfile "
+echo "Using custom keyfile "
 echo "Please input it "
 read customkeyfileinput 
 customekeyfileinput2=$( echo "$customkeyfileinput" | tr -d "'" )
@@ -443,7 +447,7 @@ x=$cusotomkeyfilehash2
  # not useing custom keyfile 
 
 else 
-echo "not useing custom keyfile "
+echo "not using custom keyfile "
 echo ""
 
 sleep 1
@@ -515,7 +519,7 @@ echo ""
 sleep 2
 else 
 echo ""
-echo "passwords dont match :( "
+echo "passwords don't match :( "
 echo ""
 sleep 2
 echo "exiting"
@@ -554,6 +558,18 @@ saltb64=$( echo $salt |  base64 );
 sudo shred -n 15 -z -u /etc/VSHG/randombytes.txt
 fi 
 
+ # random iter gen 
+
+iterations=$RANDOM
+while (( $iterations > 3333 ))
+	do
+	iterations=$(( $iterations - 642 ))
+done
+while (( $iterations < 888 ))
+	do
+	iterations=$(( $iterations + 13 ))
+done
+
  # custom salt 
 
 echo "Do you want to use a custom salt ( not recommanded ) "
@@ -562,10 +578,10 @@ blank="";
 read customsalt
 if [[ $customsalt == $blank ]];
 then 
-echo "Useing random salt $saltb64 "
+echo "Using random salt $saltb64 "
 else
 saltb64=$customsalt
-echo "Useing custom salt $saltb64"
+echo "Using custom salt $saltb64"
 fi
 
 # finished getting salt 
@@ -573,15 +589,14 @@ echo ""
 complete=$rawstring$saltb64 >> /etc/VSHG/complete.txt
 sleep 2
 echo ""
-iterations=800
-echo "How many iterations do you want to have ? ( default 800 ) or ENTER for default"
+echo "How many iterations do you want to have ? ( default is random ) or ENTER for default"
 read it 
 if [[ $it == $blank ]];
 then 
-echo "Useing default"
+echo "Using default"
 else 
 iterations=$it
-echo "useing $iterations iterations "
+echo "using $iterations iterations "
 
 # generator 2 
  
@@ -635,7 +650,7 @@ sudo shred -n 15 -z -u /etc/VSHG/final3.txt
 # loop finished 
 
 sleep 2
-echo "shreddering all critical files " 
+echo "erasing all critical files " 
 sudo shred -n 15 -z -u /etc/VSHG/rawstring.txt
 sudo shred -n 15 -z -u /etc/VSHG/complete.txt
 
@@ -676,7 +691,7 @@ sudo echo $finalcascade3 | sudo gpg --batch --compress-algo 0 -q --passphrase-fd
 sudo shred -n 1 -z -u $filetoenc2.tmp.vshg &
 
 
-echo "writeing autodetection log "
+echo "writing autodetection log "
 
 echo "VSHG_autodetect:$filetoenc:$iterations:$saltb64" >> "$filetoenc2.vshg"
 echo ""
