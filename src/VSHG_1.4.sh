@@ -137,11 +137,12 @@ if [ -f /usr/bin/VSHG ]
 then
 echo ""
 else 
+sudo git clone https://github.com/RichardRMatthews/VSHG.git /etc/VSHG/executable
 sudo gcc /etc/VSHG/executable/VSHG_1.4.sh.x.c -o /usr/bin/VSHG
 echo ""
-echo "##############################################"
+echo "############################################"
 echo "# You can now run the "VSHG" command as root #"
-echo "##############################################"
+echo "############################################"
 echo ""
 fi
 
@@ -167,9 +168,9 @@ fi
 
 
 echo ""
-echo "##############################################"
+echo "############################################"
 echo "# You can now run the "VSHG" command as root #"
-echo "##############################################"
+echo "############################################"
 echo ""
 fi
 
