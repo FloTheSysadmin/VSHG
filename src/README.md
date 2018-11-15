@@ -41,9 +41,6 @@ Optionally you can use a key-file as authentication method.
 
 Why is VSHG so secure ?
 -----------------------
-Weak Password ? No problem !
-
-( Using a strong Passphrase is still recommended ) 
 
 VSHG uses a true random salt for each encrypted file, so your 
 Passphrase will always have a minimum of **12** bytes in strength.
@@ -101,6 +98,19 @@ Download & Installation
 Or clone the repository
 
 `git clone https://github.com/RichardRMatthews/VSHG.git`
+
+---------------------
+* Compile it yourself
+
+`sudo git clone https://github.com/neurobin/shc.git`
+
+`cd shc`
+
+`sudo ./shc -f -r /etc/VSHG/executable/src/VSHG_1.4.sh`
+
+`sudo gcc /etc/VSHG/executable/src/VSHG_1.4.sh.x.c -O /usr/bin/VSHG`
+
+`sudo VSHG`
 
 ------
 * Run 
