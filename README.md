@@ -41,9 +41,6 @@ Optionally you can use a key-file as authentication method.
 
 Why is VSHG so secure ?
 -----------------------
-Weak Password ? No problem !
-
-( Using a strong Passphrase is still recommended ) 
 
 VSHG uses a true random salt for each encrypted file, so your 
 Passphrase will always have a minimum of **12** bytes in strength.
